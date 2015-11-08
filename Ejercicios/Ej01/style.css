@@ -1,0 +1,16 @@
+header {
+    background: grey;
+}
+
+.jumbotron{
+    margin-top: 30px;
+}
+
+.celda{
+    background-color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.cab{
+    text-align: center;
+}
