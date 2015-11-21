@@ -1,0 +1,23 @@
+.estiloN{
+    font-weight: bold;
+    font-style: normal;
+}
+
+.estiloNyC{
+    font-style: italic;
+    font-weight: bold;
+}
+
+div{
+    padding: 200px;
+    
+}
+
+.estiloDiv{
+    background-color: firebrick;
+}
+
+table{
+    padding: 200px;
+}
+

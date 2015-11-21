@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Se debe utilizar el juego de caracteres utf-8 -->
+    <meta charset="utf-8">
+    <!-- IE debe usar el último motor de renderizado -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- La página debe ocupar todo el ancho disponible en el navegador del dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio</title>
+    <!-- Se vincula el archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Tema opcional -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Se cargan los scripts necesarios para que Bootstrap funcione con HTML 5 y CSS 3 en IE8+ -->
+    <!--[if lt IE 9]> 
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> 
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> 
+        <![endif]-->
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+        <form class="col-sm-offset-2 col-sm-10">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre">
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="number" class="form-control" id="edad">
+            </div>
+            <div class="form-group">
+                <label for="repetidor">Repetidor</label>
+                <input type="checkbox" class="form-control" id="repetidor">
+            </div>
+            <div class="form-group">
+                <label for="poblacion">Poblacion</label>
+                <select class="form-control" id="poblacion">
+                    <option>Algeciras</option>
+                    <option>Tarifa</option>
+                    <option>La Linea</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <div class="radio" id="sexo">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> hombre
+                    </label>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked> mujer
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comentario">Comentario</label>
+                <textarea class="form-control" rows="3" id="comentario"></textarea>
+            </div>
+        </form>
+        <div>
+            <button type="submit" id="env" src="">Enviar</button>
+        </div>
+        </br>
+        </br>
+        <div class="alert alert-success" role="alert" id="alerta" style="display:none">
+            <p id="texto"></p>
+        </div>
+    </div>
+    <script src="code.js"></script>
+</body>
+
+</html>
