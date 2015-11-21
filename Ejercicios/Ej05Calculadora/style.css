@@ -2,28 +2,96 @@ body {
     background-color: #eeeeee;
 }
 
-button {
-    padding: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 10px;
-    color: transparent !important;
-    text-shadow: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-button:focus {outline:0;}
-
-#c {
-    background-color: antiquewhite;
-}
-
-.contenedor {
+.flexContainerColumna {
+    display: inline-flex;
     background-color: #9bd2eb;
+    flex-direction: column;
+    flex-wrap: nowrap;
     margin-right: 50px;
     margin-left: 50px;
     border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 560px;
+    box-shadow: 0px 7px 0px #009ce7;
 }
+
+.flexContainerFila {
+    display: flex;
+     align-items: flex-end;
+    flex-wrap: nowrap;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.flexContainerFila div {
+    width: 16%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    flex: 0 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: transparent !important;
+    text-shadow: none !important;
+    border: none !important;
+    box-shadow: 0px 7px 0px #75a7bc;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #888888;
+}
+
+#result {
+    width: 370px;
+    background-color: #75a7bc;
+    box-shadow: 0px -7px 0px #628797;
+    height: 63px;
+}
+
+#result h2{
+    text-align: right;
+    color : white;
+}
+
+#c{
+    background-color: #ff9ea7;
+    box-shadow: 0px 7px 0px #ff7b85;
+}
+
+#c h2{
+    color: white;
+}
+
+#mas {
+    background-color: #fff0f5;
+}
+
+#menos {
+    background-color: #fff0f5;
+}
+
+#por {
+    background-color: #fff0f5;
+}
+
+#entre {
+    background-color: #fff0f5;
+}
+
+#igual {
+    background-color: #f1ff8b;
+    box-shadow: 0px 7px 0px #9da94d;
+}
+
