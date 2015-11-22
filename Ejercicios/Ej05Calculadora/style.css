@@ -47,6 +47,10 @@ body {
     box-shadow: 0px 7px 0px #75a7bc;
 }
 
+.flexContainerFila div:hover{
+    background-color: lightcyan;
+}
+
 h2 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -70,6 +74,10 @@ h2 {
     box-shadow: 0px 7px 0px #ff7b85;
 }
 
+#c:hover{
+    background-color: lightpink;
+}
+
 #c h2{
     color: white;
 }
@@ -78,20 +86,40 @@ h2 {
     background-color: #fff0f5;
 }
 
+#mas:hover{
+    background-color: lightpink;
+}
+
 #menos {
     background-color: #fff0f5;
+}
+
+#menos:hover{
+    background-color: lightpink;
 }
 
 #por {
     background-color: #fff0f5;
 }
 
+#por:hover{
+    background-color: lightpink;
+}
+
 #entre {
     background-color: #fff0f5;
+}
+
+#entre:hover{
+    background-color: lightpink;
 }
 
 #igual {
     background-color: #f1ff8b;
     box-shadow: 0px 7px 0px #9da94d;
+}
+
+#igual:hover{
+    background-color: lightgoldenrodyellow;
 }
 
