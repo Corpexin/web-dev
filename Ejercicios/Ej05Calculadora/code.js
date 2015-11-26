@@ -15,7 +15,8 @@ window.onload = function () {
     var punto = document.getElementById("punto");
     //Variable de reseteo
     var reset = document.getElementById("c");
-    var booleanoPunto = true;
+    //Variable booleana que comprueba si se puede introducir un punto o no en relacion a los elementos pulsados
+    var reseteadorPunto = true; 
 
     //Cogemos las teclas de los 10 numeros y las metemos en un array de numeros. Le añadimos un onclick
     for (var i = 0; i < 10; i++) {
@@ -36,23 +37,22 @@ window.onload = function () {
     //Cada vez que se hace click en una tecla, se va añadiendo a la salida por pantalla
     function clickTecla() {
         var booleano = false;
+        var impreso = false;
 
-
-        //Comprueba que lo pulsado pueda ser un reseteador de puntos
+        //Si el boton presionado es un operador se resetea el punto
         if (operadores.indexOf(this) != -1) {
-            booleanoPunto = true;
+            reseteadorPunto = true;
         }
 
 
-        //Para que no puedan ir 2 operadores seguidos o 1 operador y 1 punto
+        //Si el boton pulsado es un operador o 1 punto y el utimo caracter tambien es un operador o un punto, no imprime el boton pulsado
         if (operadores.indexOf(this) != -1 || this.children[0].innerHTML == '.') {
-            for (var i = 0; i < operadores.length; i++) {
-                var ultimoCaracter = salidaDatos.children[0].innerHTML.charAt(salidaDatos.children[0].innerHTML.length - 1);
+            for (var i = 0; i < operadores.length; i++) { //recorre todos los operadores
+                var ultimoCaracter = salidaDatos.children[0].innerHTML.charAt(salidaDatos.children[0].innerHTML.length - 1); //guarda el ultimo caracter
                 if (ultimoCaracter == operadores[i].children[0].innerHTML ||
                     ultimoCaracter == '*' ||
                     ultimoCaracter == '.') {
                     booleano = true;
-                    booleanoPunto = true;
                 }
             }
 
@@ -64,40 +64,27 @@ window.onload = function () {
         }
 
         //Imprime por pantalla
-        if (booleano == false && booleanoPunto == true) {
-            salidaDatos.children[0].innerHTML = salidaDatos.children[0].innerHTML + this.children[0].innerHTML;
-            salidaDatos.children[0].innerHTML = salidaDatos.children[0].innerHTML.replace("x", "*");
-
-            //Para que no empiece con un operador-punto que no sea el menos
-            if (salidaDatos.children[0].innerHTML.length == 1 && (
-                    this.children[0].innerHTML == 'x' ||
-                    this.children[0].innerHTML == '/' ||
-                    this.children[0].innerHTML == '+' ||
-                    this.children[0].innerHTML == '.')) {
-                salidaDatos.children[0].innerHTML = "";
+        if (booleano == false) {
+            if (reseteadorPunto == true || this.children[0].innerHTML != '.') {
+                salidaDatos.children[0].innerHTML = salidaDatos.children[0].innerHTML + this.children[0].innerHTML;
+                salidaDatos.children[0].innerHTML = salidaDatos.children[0].innerHTML.replace("x", "*");
+                impreso = true;
             }
-        } else if (booleano == false && this.children[0].innerHTML != '.') {
-            salidaDatos.children[0].innerHTML = salidaDatos.children[0].innerHTML + this.children[0].innerHTML;
-            salidaDatos.children[0].innerHTML = salidaDatos.children[0].innerHTML.replace("x", "*");
-
-
         }
 
         //Evitar poner mas de 1 punto por numero
-        //si recibo un punto y ademas ese punto ha sido imprimido entonces si se pone a false.Comprobar que no genere conflicto
-        //poner un boolean cuando imprima 
-        if (this.children[0].innerHTML == '.') {
-            booleanoPunto = false;
+        if (this.children[0].innerHTML == '.' && impreso == true) {
+            reseteadorPunto = false;
         }
 
         //Para que no empiece con un operador-punto que no sea el menos
-        if (salidaDatos.children[0].innerHTML.length == 0 && (
+        if (salidaDatos.children[0].innerHTML.length == 1 && (
                 this.children[0].innerHTML == 'x' ||
                 this.children[0].innerHTML == '/' ||
                 this.children[0].innerHTML == '+' ||
                 this.children[0].innerHTML == '.')) {
             salidaDatos.children[0].innerHTML = "";
-            booleanoPunto = true;
+            reseteadorPunto = true;
         }
     }
 
@@ -106,14 +93,24 @@ window.onload = function () {
         if (salidaDatos.children[0].innerHTML.length != 0) {
             var textoSalidaPantalla = salidaDatos.children[0].innerHTML;
             salidaDatos.children[0].innerHTML = eval(textoSalidaPantalla);
-            booleanoPunto = true;
+
+
+            //Recorro toda la impresion. Si tiene un . no reseteo el punto, pero si no lo tiene si lo reseteo
+            var comprobacion = salidaDatos.children[0].innerHTML;
+            reseteadorPunto = true;
+            for (var i = 0; i < comprobacion.length; i++) {
+                if (comprobacion.charAt(i) == '.') {
+                    reseteadorPunto = false;
+                }
+            }
+
         }
     }
 
     //Se resetean los campos
     function resetear() {
         salidaDatos.children[0].innerHTML = "";
-        booleanoPunto = true;
+        reseteadorPunto = true;
     }
 
 
