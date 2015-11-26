@@ -20,7 +20,7 @@ body {
 
 .flexContainerFila {
     display: flex;
-     align-items: flex-end;
+    align-items: flex-end;
     flex-wrap: nowrap;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -45,10 +45,18 @@ body {
     text-shadow: none !important;
     border: none !important;
     box-shadow: 0px 7px 0px #75a7bc;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
 }
 
-.flexContainerFila div:hover{
+.flexContainerFila div:hover {
     background-color: lightcyan;
+}
+
+.flexContainerFila div:active {
+    height: 67px;
 }
 
 h2 {
@@ -64,21 +72,25 @@ h2 {
     height: 63px;
 }
 
-#result h2{
+#result h2 {
     text-align: right;
-    color : white;
+    color: white;
 }
 
-#c{
+#c {
     background-color: #ff9ea7;
     box-shadow: 0px 7px 0px #ff7b85;
 }
 
-#c:hover{
+#c:hover {
     background-color: lightpink;
 }
 
-#c h2{
+#c:active {
+    height: 68.812px;
+}
+
+#c h2 {
     color: white;
 }
 
@@ -86,7 +98,7 @@ h2 {
     background-color: #fff0f5;
 }
 
-#mas:hover{
+#mas:hover {
     background-color: lightpink;
 }
 
@@ -94,7 +106,7 @@ h2 {
     background-color: #fff0f5;
 }
 
-#menos:hover{
+#menos:hover {
     background-color: lightpink;
 }
 
@@ -102,7 +114,7 @@ h2 {
     background-color: #fff0f5;
 }
 
-#por:hover{
+#por:hover {
     background-color: lightpink;
 }
 
@@ -110,7 +122,7 @@ h2 {
     background-color: #fff0f5;
 }
 
-#entre:hover{
+#entre:hover {
     background-color: lightpink;
 }
 
@@ -119,7 +131,6 @@ h2 {
     box-shadow: 0px 7px 0px #9da94d;
 }
 
-#igual:hover{
+#igual:hover {
     background-color: lightgoldenrodyellow;
 }
-
