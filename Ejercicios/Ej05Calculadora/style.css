@@ -9,13 +9,13 @@ body {
     flex-wrap: nowrap;
     margin-right: 50px;
     margin-left: 50px;
-    border-radius: 5px;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
     width: 560px;
-    box-shadow: 0px 7px 0px #009ce7;
+    box-shadow: 0 7px 0 #009ce7;
+    border-radius: 5px;
 }
 
 .flexContainerFila {
@@ -44,11 +44,10 @@ body {
     color: transparent !important;
     text-shadow: none !important;
     border: none !important;
-    box-shadow: 0px 7px 0px #75a7bc;
+    box-shadow: 0 7px 0 #75a7bc;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-
 }
 
 .flexContainerFila div:hover {
@@ -60,7 +59,7 @@ body {
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
     text-align: center;
     color: #888888;
 }
@@ -68,7 +67,7 @@ h2 {
 #result {
     width: 370px;
     background-color: #75a7bc;
-    box-shadow: 0px -7px 0px #628797;
+    box-shadow: 0 -7px 0 #628797;
     height: 63px;
 }
 
@@ -79,7 +78,7 @@ h2 {
 
 #c {
     background-color: #ff9ea7;
-    box-shadow: 0px 7px 0px #ff7b85;
+    box-shadow: 0 7px 0 #ff7b85;
 }
 
 #c:hover {
@@ -128,7 +127,7 @@ h2 {
 
 #igual {
     background-color: #f1ff8b;
-    box-shadow: 0px 7px 0px #9da94d;
+    box-shadow: 0 7px 0 #9da94d;
 }
 
 #igual:hover {

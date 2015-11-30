@@ -1,43 +1,49 @@
-//colors
-$color_gallery_approx: #eeeeee;
-$color_cornflower_approx: #9bd2eb;
-$color_cerulean_approx: #009ce7;
+//Variables
+$robotoF: Roboto;
+$sansF: sans-serif;
+$fondoBody: #eeeeee;
+$fondoCalc: #9bd2eb;
+$sombraCalc: #009ce7;
 $white: white;
-$color_neptune_approx: #75a7bc;
-$baby_blue: lightcyan;
-$color_suva_gray_approx: #888888;
-$color_hoki_approx: #628797;
-$color_sweet_pink_approx: #ff9ea7;
-$color_froly_approx: #ff7b85;
-$color_your_pink_approx: lightpink;
-$lavender_blush: #fff0f5;
-$color_dolly_approx: #f1ff8b;
-$color_husk_approx: #9da94d;
-$color_mimosa_approx: lightgoldenrodyellow;
+$sombraDiv: #75a7bc;
+$fondoDiv: lightcyan;
+$texto: #888888;
+$resultadoC: #628797;
+$resetC: #ff9ea7;
+$sombraResetC: #ff7b85;
+$hoverDiv1: lightpink;
+$fondoOperadoresDiv: #fff0f5;
+$igualFondo: #f1ff8b;
+$sombraIgualFondo: #9da94d;
+$hoverIgualDiv: lightgoldenrodyellow;
 
-//fonts
-$font_0: Roboto;
-$font_1: sans-serif;
+//mixin para el redondeo de los botones
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+//mixin para las sombras
+@mixin box-shadow($elem1, $elem2, $elem3, $elem4) {
+  box-shadow: $elem1 $elem2 $elem3 $elem4;
+}
 
 body {
-	background-color: $color_gallery_approx;
+	background-color: $fondoBody;
 }
 .flexContainerColumna {
 	display: inline-flex;
-	background-color: $color_cornflower_approx;
+	background-color: $fondoCalc;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	margin-right: 50px;
 	margin-left: 50px;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 5px;
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	width: 560px;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 7px 0 $color_cerulean_approx;
+	@include box-shadow(0, 7px, 0, $sombraCalc);
+	@include border-radius(5px);
 }
 .flexContainerFila {
 	display: flex;
@@ -59,16 +65,13 @@ body {
 		margin-right: 5px;
 		margin-top: 5px;
 		margin-bottom: 5px;
-		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-		border-radius: 5px;
+		@include border-radius(5px);
 		color: transparent !important;
-		//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
 		text-shadow: none !important;
 		border: none !important;
-		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-		box-shadow: 0 7px 0 $color_neptune_approx;
+		@include box-shadow(0, 7px, 0, $sombraDiv);
 		&:hover {
-			background-color: $baby_blue;
+			background-color: $fondoDiv;
 		}
 		&:active {
 			height: 67px;
@@ -76,15 +79,14 @@ body {
 	}
 }
 h2 {
-	font-family: $font_0, $font_1;
+	font-family: $robotoF, $sansF;
 	text-align: center;
-	color: $color_suva_gray_approx;
+	color: $texto;
 }
 #result {
 	width: 370px;
-	background-color: $color_neptune_approx;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 -7px 0 $color_hoki_approx;
+	background-color: $sombraDiv;
+	@include box-shadow(0, -7px, 0, $resultadoC);
 	height: 63px;
 	h2 {
 		text-align: right;
@@ -92,11 +94,10 @@ h2 {
 	}
 }
 #c {
-	background-color: $color_sweet_pink_approx;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 7px 0 $color_froly_approx;
+	background-color: $resetC;
+	@include box-shadow(0, 7px, 0, $sombraResetC);
 	&:hover {
-		background-color: $color_your_pink_approx;
+		background-color: $hoverDiv1;
 	}
 	&:active {
 		height: 68.812px;
@@ -106,34 +107,33 @@ h2 {
 	}
 }
 #mas {
-	background-color: $lavender_blush;
+	background-color: $fondoOperadoresDiv;
 	&:hover {
-		background-color: $color_your_pink_approx;
+		background-color: $hoverDiv1;
 	}
 }
 #menos {
-	background-color: $lavender_blush;
+	background-color: $fondoOperadoresDiv;
 	&:hover {
-		background-color: $color_your_pink_approx;
+		background-color: $hoverDiv1;
 	}
 }
 #por {
-	background-color: $lavender_blush;
+	background-color: $fondoOperadoresDiv;
 	&:hover {
-		background-color: $color_your_pink_approx;
+		background-color: $hoverDiv1;
 	}
 }
 #entre {
-	background-color: $lavender_blush;
+	background-color: $fondoOperadoresDiv;
 	&:hover {
-		background-color: $color_your_pink_approx;
+		background-color: $hoverDiv1;
 	}
 }
 #igual {
-	background-color: $color_dolly_approx;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 7px 0 $color_husk_approx;
+	background-color: $igualFondo;
+	@include box-shadow(0, 7px, 0, $sombraIgualFondo);
 	&:hover {
-		background-color: $color_mimosa_approx;
+		background-color: $hoverIgualDiv;
 	}
 }
